@@ -31,12 +31,16 @@ travels through your services.
 - **DB Client** for PostgreSQL, MySQL / MariaDB and MongoDB in your Docker containers
 - **Search and filter** result rows by any column, copy as CSV
 - **"Time it"** – compare a query's speed before and after a change
-- **Database snapshots** – save a state and restore it later
+- **Database versions** – save the state you like, try things, go back in seconds (up to 10 per database)
+- **Full-screen SQL editor** with soft wrap
 - **Docker** – containers, volumes, logs, connection strings, compose projects
-- **Notes** – Markdown, JSON, SQL and HTTP notes with notebooks, tags and version history
-- **JSON compare**, **cURL → .http**, **Base64**
+- **Notes** – Markdown, JSON and SQL notes with notebooks, tags and version history
+- **Diagrams** – draw flowcharts like on a whiteboard, or write them in Mermaid; the two stay in step
+- **Pen** – draw a box, circle, diamond or arrow by hand; it turns into a clean shape
+- **Diagrams out** – copy as a ```` ```mermaid ```` block for GitHub / docs, or save a PNG / SVG
+- **JSON compare**, **Base64**
 - **⌘K / Ctrl+K search** across notes, commands, HTTP requests (name, path, headers, comments) and tools
-- **Agent folder** – your HTTP collections and command packages as plain files your AI agent (Claude Code, Cursor…) can edit; secrets stay hidden
+- **Agent folder** – your HTTP collections, command packages and notes (diagrams too) as plain files your AI agent (Claude Code, Cursor…) can edit; secrets stay hidden
 - **Update notice** – the app tells you when a new version is out
 - **Local only** – your data never leaves your Mac
 
@@ -81,24 +85,40 @@ travels through your services.
 - Connects to the databases in your Docker containers without setup.
 - Search and filter result rows by any column, copy as CSV.
 - **"Time it"** – measure a query before and after a change (indexes, schema) and compare.
-- Snapshots: save a database state and restore it later.
+- **Versions**: save the database the way you like it, experiment, and go back. On
+  PostgreSQL a version is a copy inside the server – saved and restored in seconds,
+  views and functions included; MySQL and MongoDB use a dump. Up to 10 per database:
+  the oldest automatic one makes room, named ones stay until you delete them.
+- A **full-screen editor** with soft wrap; **Dry run** runs a statement and rolls it back.
 
 ### 🐳 Docker
 - Containers and volumes, logs, start / stop / restart, connection strings, compose projects.
 
+### ✏️ Diagrams
+- A note can be a **diagram**: draw it on a canvas (shapes, arrows, colours, labels) or
+  write it as a **Mermaid flowchart** – switch with one click, both stay in step.
+- **Pen**: draw roughly by hand – a box, a circle, a diamond, a line from one shape to
+  another – and it becomes a clean shape or arrow.
+- Toolbox with **select / hand / pen**, undo / redo, auto-layout, full screen and
+  keyboard shortcuts (press **?**).
+- The note's text *is* Mermaid: copy it as a ```` ```mermaid ```` block into a README or
+  a GitHub issue and it renders there. Or export a **PNG / SVG** image.
+
 ### 🤖 Agent folder
-- Turn it on in Settings: your HTTP collections become `.http` files and your command
-  packages JSON files in a folder (`~/Stackrun` by default), with an `AGENTS.md` that
-  explains them to an AI agent.
-- Ask your agent to add a request or set up a package – the change shows up in Stackrun
-  at once; your own changes are written back to the files.
+- Turn it on in Settings: your HTTP collections become `.http` files, your command
+  packages JSON files and your notes `.md` / `.json` / `.sql` / `.mmd` files in a folder
+  (`~/Stackrun` by default), with an `AGENTS.md` that explains them to an AI agent –
+  view and edit it in Settings.
+- Ask your agent to add a request, set up a package, write a note or **draw a diagram** –
+  the change shows up in Stackrun at once; your own changes are written back to the files.
+- Notes tagged **#private** never go to the folder.
 - **Secrets stay in Stackrun**: environments are not in the folder, and tokens,
   passwords, keys or cookies written in requests appear as `{{$hidden}}` – the real
   value is put back when the file comes in. Nothing runs because a file changed.
 
 ### 🧰 And more
-- **Notes** (Markdown, JSON, SQL, HTTP) with notebooks, tags and version history.
-- **JSON compare**, **cURL → .http**, **Base64**.
+- **Notes** (Markdown, JSON, SQL, diagrams) with notebooks, tags and version history.
+- **JSON compare**, **Base64** (a diagram's image opens there as a `data:` URL).
 - **⌘K / Ctrl+K** – search everything: notes, commands, HTTP requests (by name, path,
   headers or comments), tools.
 
